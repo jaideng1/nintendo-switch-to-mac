@@ -4,6 +4,7 @@
 
  Big helps:
  https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering
+ 
  The Node.js `switch-joy-con` package. Was originally going to use this in order to do this project, but it didn't work (:/) so I had to make my own version of it for it to work.
  
  
