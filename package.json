@@ -1,0 +1,20 @@
+{
+  "name": "nintendo-switch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "",
+    "postinstall": ""
+  },
+  "author": "jg1",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node-gyp": "^7.1.2",
+    "node-hid": "^0.7.9",
+    "robotjs": "^0.6.0",
+    "socket.io": "^3.0.4",
+  }
+}
