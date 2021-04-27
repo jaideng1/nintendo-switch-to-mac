@@ -10,4 +10,8 @@
  
  
  
- if someone sees this and knows an example list of bytes for the controller to rumble/vibrate pls open an issue and tell me this is the one thing that i **cannot** figure out ;-;
+ if someone sees this and knows an example list of bytes for the controller to rumble/vibrate pls open an issue and tell me this is the one thing that i **cannot** figure out ;-;  
+
+
+oh yea to run it yourself download it and run `npm install` in the repository then `node app.js` to run it  
+idk if this is the up to date one, so it might not work
