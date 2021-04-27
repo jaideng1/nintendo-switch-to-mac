@@ -10,4 +10,4 @@
  
  
  
- if someone sees this and knows an example list of bytes for the controller to rumble/vibrate pls open an issue and tell me this is the one thing that i **cannot** figure out ;-; i mean im not even a ██████████████████████████████
+ if someone sees this and knows an example list of bytes for the controller to rumble/vibrate pls open an issue and tell me this is the one thing that i **cannot** figure out ;-;
