@@ -3,6 +3,8 @@ const HID = require("node-hid");
 // https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering
 // also thanks to the switch-joy-con for a couple references
 
+var controllers = [];
+
 const Dir = {
   RIGHT: 0x00,
   DOWN_RIGHT: 0x01,
@@ -52,7 +54,11 @@ const Inps = {
 
 class Joycon {
   constructor(path, model) {
-    this.device = new HID.HID(path);
+    try {
+      this.device = HID.HID(model.vendorId, model.productId);
+    } catch (e) {
+      console.log(e)
+    }
     this.model = model;
     this.buttons;
     this.device.on("data", (bytes) => {
@@ -65,6 +71,8 @@ class Joycon {
     this.name = this.model.product;
     this.packetn = 0;
     this.changeLED(LED_VALUES.ONE)
+    controllers.push(this)
+    console.log("Controller finished registering.")
   }
   // https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering#joy-con-status-data-packet
   // 0x19,0x01,0x03,0x08,0x00,0x92,0x00,0x01,0x00,0x00,0x69,0x2d,0x1f
@@ -162,6 +170,16 @@ class Joycon {
   }
   static getJoycon(path, model) {
     return (model.product === 'Joy-Con (R)') ? new JoyconRight(path, model) : new JoyconLeft(path, model);
+  }
+  static getAllButtons() {
+    let l = [];
+    for (let i = 0; i < controllers.length; i++) {
+      l.push({
+        model: controllers[i].model,
+        buttons: controllers[i].buttons
+      });
+    }
+    return JSON.stringify(l);
   }
 }
 
